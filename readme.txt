@@ -31,5 +31,8 @@ Optionally, you can provide height and width attributes:
 
 == Changelog ==
 
+= 1.0.1 =
+* Fixed bug in the way the View Original link is created
+
 = 1.0 =
 * Initial release.
