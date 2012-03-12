@@ -5,7 +5,7 @@ Plugin URI: http://teleogistic.net/code/wordpress/prezi-wp
 Author: Boone Gorges
 Author URI: http://boonebgorges.com
 Description: Adds a Prezi shortcode to allow you to easily embed presentations into WordPress.
-Version: 1.0
+Version: 1.0.1
 */
 
 class PreziWP {
