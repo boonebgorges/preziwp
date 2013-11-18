@@ -18,7 +18,7 @@ class PreziWP {
 	function preziwp() {
 		add_shortcode( 'prezi', array( $this, 'do_shortcode' ) );
 	}
-	
+
 	/**
 	 * Does the shortcode
 	 *
@@ -27,16 +27,16 @@ class PreziWP {
 	 */
 	function do_shortcode( $atts = false ) {
 		// Do 'er to 'er
-	
+
 		// Parse the args. Default resolution is 550x400
 		extract( shortcode_atts( array(
-			"width"		=> 550,  
+			"width"		=> 550,
 			"height" 	=> 400,
 			"id"		=> false
 		), $atts) );
-		
+
 		$id = $this->check_id( $id );
-	
+
 		// Check to make sure an ID was passed.
 		if ( !$id )
 			return __( 'You must provide a Prezi ID for the embedded presentation to work.', 'preziwp' );
@@ -52,7 +52,7 @@ class PreziWP {
 
 		return $html;
 	}
-	
+
 	/**
 	 * Checks the user submitted id
 	 *
@@ -66,21 +66,21 @@ class PreziWP {
 	 */
 	function check_id( $id ) {
 		// Cross your fingers
-		
+
 		if ( empty( $id ) )
 			return false;
-		
+
 		if ( strpos( $id, 'prezi.com' ) ) {
 			// Get everything after the prezi.com bit
-			$split	 	= explode( '.com/', $id );
-			
+			$split = explode( '.com/', $id );
+
 			// Break up the remaining goods by slashes
-			$split	 	= explode( '/', $split[1] );
+			$split = explode( '/', $split[1] );
 
 			// Take everything before the first slash
-			$id		= $split[0];
+			$id = $split[0];
 		}
-		
+
 		return $id;
 	}
 }
